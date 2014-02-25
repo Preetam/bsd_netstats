@@ -5,7 +5,7 @@ Example
 ---
 `gcc traffic.c -o traffic && ./traffic`
 
-```
+```json
 {
   "lo0": {
     "bytesIn": 1086834,
