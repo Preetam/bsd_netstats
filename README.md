@@ -3,7 +3,7 @@ bsd_netstats
 
 Example
 ---
-`gcc traffic.c -o traffic && ./traffic`
+`$ gcc traffic.c -o traffic && ./traffic`
 
 ```json
 {
