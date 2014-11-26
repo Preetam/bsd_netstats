@@ -1,16 +1,14 @@
-#include <stdio.h>
-#include <stdlib.h>
-
 #include <sys/socket.h>
-#include <sys/types.h>
 #include <ifaddrs.h>
 #include <net/if.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/types.h>
 
 int
 main() {
 	struct ifaddrs* ifap;
 	int err = getifaddrs(&ifap);
-	
 	if(err) {
 		exit(1);
 	}
@@ -23,7 +21,7 @@ main() {
 		if(s != NULL) {
 			first ? first = 0 : printf(",\n");
 
-			printf("  \"%s\": {\n    \"bytesIn\": %d,\n    \"bytesOut\": %d\n  }",
+			printf("  \"%s\": {\n    \"bytesIn\": %llu,\n    \"bytesOut\": %llu\n  }",
 				ifap->ifa_name, s->ifi_ibytes, s->ifi_obytes);
 		}
 	}
